@@ -36,3 +36,9 @@ Route::middleware('particulier')->group(function () {
 
 
 });
+
+Route::middleware ('auth', 'verified')->group (function () {
+    Route::resource ('atelier', 'AtelierController', [
+        'only' => ['create', 'store', 'destroy', 'update']
+    ]);
+});

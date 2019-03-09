@@ -34,6 +34,20 @@
                 </div>
             </li>
             @endadmin
+            @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle{{ currentRoute(route('atelier.create'))}}"
+                    href="#" id="navbarDropdownGestAlbum" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                        @lang('Gestion')
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownGestAlbum">
+                        <a class="dropdown-item" href="{{ route('atelier.create') }}">
+                            <i class="fas fa-images fa-lg"></i> @lang('Ajouter un atelier')
+                        </a>
+                    </div>
+                </li>
+            @endauth
         </ul>
         <ul class="navbar-nav ml-auto">
             @guest
